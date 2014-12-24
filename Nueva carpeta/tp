@@ -1,0 +1,128 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     08-12-2014 4:07:25                           */
+/*==============================================================*/
+
+
+drop table if exists ADMIN_DB;
+
+drop table if exists CLIENTE_DB;
+
+drop table if exists IMG_DB;
+
+drop table if exists INGRESOS_DB;
+
+drop table if exists PRODUCT_DB;
+
+drop table if exists PROPIETARIOS_DB;
+
+/*==============================================================*/
+/* Table: ADMIN_DB                                              */
+/*==============================================================*/
+create table ADMIN_DB
+(
+   ADMIN_USER           varchar(35) not null,
+   ADMIN_PASS           varchar(35),
+   ADMIN_NIVEL          int,
+   primary key (ADMIN_USER)
+);
+
+/*==============================================================*/
+/* Table: CLIENTE_DB                                            */
+/*==============================================================*/
+create table CLIENTE_DB
+(
+   CLIENTE_RUT          varchar(20) not null,
+   INGRESOS_ID          int,
+   CLIENTE_FECHA        date,
+   CLIENTE_NOMBRE       varchar(100),
+   CLIENTE_PATERNO      varchar(50),
+   CLIENTE_MATERNO      varchar(50),
+   CLIENTE_NACIONALIDAD varchar(50),
+   CLIENTE_E_CIVIL      varchar(50),
+   CLIENTE_PROFESION    varchar(120),
+   CLIENTE_DIRECCION    varchar(300),
+   CLIENTE_CORREO       varchar(120),
+   CLIENTE_TELEFONO     varchar(50),
+   CLIENTE_DESCRIPCION  varchar(1000),
+   primary key (CLIENTE_RUT)
+);
+
+/*==============================================================*/
+/* Table: IMG_DB                                                */
+/*==============================================================*/
+create table IMG_DB
+(
+   IMG_ID               int not null,
+   PRODUCT_ID           int,
+   IMG_NOMBRE           varchar(300),
+   primary key (IMG_ID)
+);
+
+/*==============================================================*/
+/* Table: INGRESOS_DB                                           */
+/*==============================================================*/
+create table INGRESOS_DB
+(
+   INGRESOS_ID          int not null,
+   INGRESOS_FECHA       date,
+   INGRESOS_OPERACION   varchar(50),
+   INGRESOS_CIFRA       int,
+   primary key (INGRESOS_ID)
+);
+
+/*==============================================================*/
+/* Table: PRODUCT_DB                                            */
+/*==============================================================*/
+create table PRODUCT_DB
+(
+   PRODUCT_ID           int not null,
+   PROP_RUT             varchar(20),
+   INGRESOS_ID          int,
+   PRODUCT_CATEGORIA    varchar(50),
+   PRODUCT_ESTADO       varchar(50),
+   PRODUCT_TITULO       varchar(100),
+   PRODUCT_VALOR_MIN    int,
+   PRODUCT_VALOR_MAX    int,
+   PRODUCT_DORM         int,
+   PRODUCT_BANOS        int,
+   PRODUCT_ESTACIONA    int,
+   PRODUCT_SUP_UTIL     int,
+   PRODUCT_SUP_TOTAL    int,
+   PRODUCT_DESCRIPCION  varchar(1000),
+   primary key (PRODUCT_ID)
+);
+
+/*==============================================================*/
+/* Table: PROPIETARIOS_DB                                       */
+/*==============================================================*/
+create table PROPIETARIOS_DB
+(
+   PROP_RUT             varchar(20) not null,
+   PROP_FECHA           date,
+   PROP_NOMBRE1         varchar(50),
+   PROP_NOMBRE2         varchar(50),
+   PROP_PATERNO         varchar(50),
+   PROP_MATERNO         varchar(50),
+   PROP_NACIONALIDAD    varchar(50),
+   PROP_E_CIVIL         varchar(50),
+   PROP_PROFESION       varchar(120),
+   PROP_DIRECCION       varchar(300),
+   PROP_CORREO          varchar(120),
+   PROP_TELEFONOL       varchar(50),
+   PROP_DESCRIPCION     varchar(1000),
+   primary key (PROP_RUT)
+);
+
+alter table CLIENTE_DB add constraint FK_CLIENTE_INGRESOS foreign key (INGRESOS_ID)
+      references INGRESOS_DB (INGRESOS_ID) on delete restrict on update restrict;
+
+alter table IMG_DB add constraint FK_IMG_PRODUCT foreign key (PRODUCT_ID)
+      references PRODUCT_DB (PRODUCT_ID) on delete restrict on update restrict;
+
+alter table PRODUCT_DB add constraint FK_PRODUCT_INGRESOS foreign key (INGRESOS_ID)
+      references INGRESOS_DB (INGRESOS_ID) on delete restrict on update restrict;
+
+alter table PRODUCT_DB add constraint FK_PRODUCT_PROPIETARIOS foreign key (PROP_RUT)
+      references PROPIETARIOS_DB (PROP_RUT) on delete restrict on update restrict;
+
