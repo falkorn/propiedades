@@ -21,7 +21,7 @@ a:hover{
 	color: #333;
 }
 /* -----------------
-   Cabezera (Header)
+   Utiles
    ----------------- */
 .clearfix
 {	overflow: auto;
@@ -93,7 +93,7 @@ ul
 		transition: all .5s ease;
 }
 /* -----------------
-   Cabezera (Header)
+   Menu de busqueda (Header)
    ----------------- */
 .menu-busqueda
 {
@@ -262,8 +262,25 @@ z-index: 1000;
 		-o-transition: all .5s ease;
 		transition: all .5s ease;
 }
-
-
+.contacto, .contacto a
+{
+	color: #111;
+	padding-left: 0;
+	text-align: center;
+	font-size: 30px ;
+}
+.contacto
+{
+	margin-left: 0;
+}
+.enviar
+{
+	width: 100%;
+}
+.earphone
+{
+	top: 4px;
+}
 /* ----------------------
    Pie de Pagina (Footer)
    ---------------------- */   
@@ -352,101 +369,31 @@ z-index: 1000;
 	height: 30%;
 	width: 95.5%;	
 }
-
+/* -----------------
+   Login
+   ----------------- */
+.modal-header
+{
+	background-color: #3386ff;
+	border-radius: 6px 6px 0 0;
+}
 
 /* ---------------------------------
    Media Queries (Responsive Design)
    --------------------------------- */ 
 
 @media screen and (max-width: 1023px){
-	footer
-	{
-	margin: 0;
 
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
-	footer .fono
-	{
-		margin: 1.5%;
-	}
-	header
-	{
-	border-radius: 0;	
-	margin: 0;
-
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
 	nav ul li a
 	{
 		font-size: 1.5em;
 		font-weight: 400;
 		padding: .5em 1.5em;
 	}
-	#contenido
-	{
-		margin: -10px 0 0 0;
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
-	#contenido_contacto
-	{
-		margin: 0;
-	}
-	#contenido .item, #contenido_contacto .contacto, #contenido .formulario
-	{
-	border: 1px solid #287de7;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	}
-	#contenido .item .titulo_item, #contenido .item .valor
-	{
-		font-size: 1.4em
-	}
-	#contenido .item .descripcion
-	{
-		font-size: 1.2em;
-	}
-	.formulario input,	.formulario #mensaje
-	{
-		font-size: 1.2em;
-	}
 
-	#principal
-	{
-		margin: 0;
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
-	.flex-caption
-	{
-		font-size: 1.5em;
-	}
 }
 @media screen and (max-width: 767px){
-	footer
-	{
-	margin: 0;
 
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
-	footer .fono
-	{
-		margin: .5em 1em;
-	}
 	header #logo img
 	{
 		height: 58px;
@@ -471,41 +418,7 @@ z-index: 1000;
 		-o-transition: all .5s ease;
 		transition: all .5s ease;
 	}
-	#contenido .item, #contenido_contacto .contacto
-	{
-	border: 1px solid #287de7;
 
-		-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-		border-radius: 3px;
-		width: 95%;
-
-		-webkit-transition:.5s;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
-	}
-	#contenido .item .titulo_item, #contenido .item .valor
-	{
-		font-size: 1.3em
-	}
-	#contenido .item .descripcion
-	{
-		font-size: 1.1em;
-		height: 125px;
-	}
-	.formulario input,	.formulario #mensaje
-	{
-		font-size: 1.1em;
-	}
-	.formulario #mensaje
-	{
-		width: 95%;	
-	}
-	.flex-caption
-	{
-		font-size: 1.4em;
-	}
 }
 @media screen and (max-width: 480px){
 	.xxs
@@ -520,25 +433,7 @@ z-index: 1000;
 	}
 }
 @media screen and (max-width: 380px){
-	footer .fono
-	{
-		margin: .5em 0;
-	}
-	#contenido, #principal, nav, footer
-	{
-		margin: 0;
-	}
-	#contenido .item .miniatura
-	{
-		height: 220px;
-	}
-	#contenido .item .titulo_item, #contenido .item .valor
-	{
-		font-size: 1.2em
-	}
-	#contenido .item .descripcion
-	{
-		font-size: 1em;
-	}
+
+
 
 }

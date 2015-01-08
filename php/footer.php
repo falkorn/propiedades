@@ -37,3 +37,8 @@
 	  ga('send', 'pageview');
 
 	</script>
+<?php 	
+if (isset($conexion)) {
+	mysql_close ($conexion);
+}
+?>
