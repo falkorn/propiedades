@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-xs-12 footer">
 	<ul class="foot">
-		<li > <i class="glyphicon glyphicon-earphone"></i><b style="font-size:22px;">  <a href="tel:+569 875 455 55">+569 513 780 40</a> </b></li>
+		<li > <i class="glyphicon glyphicon-earphone"></i><b style="font-size:22px;">  <a href="tel:+569 513 780 40">+569 513 780 40</a> </b></li>
 		<li> <a href="mailto:contacto@torrespropiedades.cl">contacto@torrespropiedades.cl</a></li>
 		<li>Freire N° 751, Oficina 3 - San Felipe de Aconcagua.</li>
 

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
-<?php $pagina = 'plantilla'; ?> <!-- Menu dinamico -->
+<?php $pagina = 'propiedades'; ?> <!-- Menu dinamico -->
 <?php require_once ("php/conexion_bd.php"); ?>
 <?php require_once ("php/functions.php"); ?>
+<?php require_once ("php/mostrar.php"); ?>
 <?php 
 
 if (isset($_GET["propiedad"])) 
@@ -40,58 +41,10 @@ echo '<h1>' . utf8_encode($propiedad['PROP_TITULO']) . '</h1>';
 </div>
 
 
-	<div class="xxs col-xs-12 col-md-8">
-		<div id="carousel" class="carousel slide" data-ride="carousel">
-		 
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner">
-		    <div class="item active">
-		      <img src="img/1.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/2.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/3.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/4.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/5.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/6.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/7.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/8.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/9.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/10.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/11.jpg" alt="...">
-		    </div>
-		    <div class="item">
-		      <img src="img/12.jpg" alt="...">
-		    </div>		    
-		  </div>
-		 
-		  <!-- Controls -->
-		  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left"></span>
-		  </a>
-		  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right"></span>
-		  </a>
-		</div> <!-- Carousel -->
-	</div>
+<?php 	$imagenes = obtener_imagenes($propiedad_selec);
+		mostrar_imagenes ($imagenes);
+?>
+
 
 	<div class="xxs col-xs-12 col-md-4">
 		<div class="panel panel-primary">
@@ -148,7 +101,7 @@ echo '<h1>' . utf8_encode($propiedad['PROP_TITULO']) . '</h1>';
 			<p class="contacto">
 				<i class="glyphicon glyphicon-earphone earphone"></i>
 				<b>
-					<a href="tel:+569 875 455 55">513 780 40</a> 
+					<a href="tel:+569 513 780 40">513 780 40</a> 
 				</b>
 			<p>
 		<div class="col-xs-12">

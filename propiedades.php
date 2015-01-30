@@ -3,7 +3,7 @@
 <?php $pagina= 'propiedades'; ?> <!-- Navegacion dinamica en el menu -->
 <?php require_once ("php/conexion_bd.php"); ?>
 <?php require_once ("php/functions.php"); ?>
-<?php require ("php/propiedades_item.php"); ?>
+<?php require ("php/mostrar.php"); ?>
 <html lang="es">
 <head>
 	<meta charset="utf-8">

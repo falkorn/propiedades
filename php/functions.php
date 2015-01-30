@@ -17,6 +17,24 @@ function obtener_propiedades()
 	return $propiedades;
 }
 
+function obtener_imagenes($propiedad_selec)
+{
+	global $conexion;
+	$consulta = "SELECT * FROM img_db WHERE PROP_ID=" . $propiedad_selec;
+	$respuesta = mysql_query ($consulta,$conexion);
+	verificar_consulta($respuesta);
+	$fila=mysql_fetch_array($respuesta);
+	if ($fila['IMG_NOMBRE']!=NULL) 
+	{
+		return $respuesta;
+	}else
+	{
+		return NULL;
+	}
+}
+
+
+
 function propiedad_por_id($propiedad_selec)
 {
 	global $conexion;
@@ -31,6 +49,7 @@ function propiedad_por_id($propiedad_selec)
 		return NULL;
 	}
 }
+
 
 
 

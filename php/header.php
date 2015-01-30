@@ -22,7 +22,6 @@
 			    <ul class="nav nav-pills nav-justified">
 					<li <?php if ($pagina == 'inicio') {echo 'class="active"';} ?> ><a href="index.php">Inicio</a></li>
 					<li <?php if ($pagina == 'propiedades') {echo 'class="active"';} ?> ><a href="propiedades.php">Propiedades </a></li>
-					<li <?php if ($pagina == 'plantilla') {echo 'class="active"';} ?> ><a href="plantilla.php">Plantilla</a></li>
 					<li <?php if ($pagina == 'servicios') {echo 'class="active"';} ?> ><a href="servicios.php">Servicios</a></li>
 					<li <?php if ($pagina == 'contacto') {echo 'class="active"';} ?> ><a href="contacto.php">Contacto</a></li>
 			    </ul>
